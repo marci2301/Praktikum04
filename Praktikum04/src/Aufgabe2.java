@@ -14,16 +14,24 @@ public class Aufgabe2 {
 			darray[i] = a;
 		}
 		
-		for(int i=1; i<darray.length; i++){
-			
-			double min = Math.min(darray[i-1], darray[i]);
-			double max = Math.max(darray[i-1], darray[i]);
-			
-			double mittelwert = 0; 
-			
-			mittelwert+= darray[i-1];
+		double min = darray[0];
+		double max = darray[0];
+		double mittelwert = 0;
 		
+		for(int i=0; i<darray.length; i++){
+			
+			if(min>darray[i]) {
+				min = darray[i];
+			}
+			if(max<darray[i]) {
+				max = darray[i];
+			}
+			
+			mittelwert += darray[i];
 		}
+		
+		mittelwert = mittelwert/darray.length;
+		StdOut.println("Maximalwert: " + max + " Minimalwert: " + min + " Mittelwert: " + mittelwert);
 	}
 
 }
